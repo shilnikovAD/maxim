@@ -3,3 +3,7 @@ dist/
 .tmp/
 *.log
 .DS_Store
+storybook-static/
+playwright-report/
+test-results/
+coverage/
