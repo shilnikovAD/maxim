@@ -1,0 +1,38 @@
+.favorites {
+  padding: var(--spacing-xl) 0;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text);
+}
+
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.empty {
+  text-align: center;
+  padding: 64px;
+  color: var(--color-text-light);
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+.hint {
+  font-size: 1rem !important;
+  color: var(--color-text-light);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
