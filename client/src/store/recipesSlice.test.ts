@@ -71,7 +71,7 @@ describe('recipesSlice', () => {
 
   describe('fetchRecipes async thunk', () => {
     it('should set status to loading when pending', () => {
-      const result = recipesReducer(initialState, fetchRecipes.pending('requestId'));
+      const result = recipesReducer(initialState, fetchRecipes.pending('requestId', undefined));
       expect(result.status).toBe('loading');
       expect(result.error).toBeNull();
     });
@@ -79,7 +79,7 @@ describe('recipesSlice', () => {
     it('should update items when fulfilled', () => {
       const result = recipesReducer(
         { ...initialState, status: 'loading' },
-        fetchRecipes.fulfilled(mockRecipes, 'requestId')
+        fetchRecipes.fulfilled(mockRecipes, 'requestId', undefined)
       );
       expect(result.status).toBe('succeeded');
       expect(result.items).toEqual(mockRecipes);
@@ -89,7 +89,7 @@ describe('recipesSlice', () => {
       const error = new Error('Network error');
       const result = recipesReducer(
         { ...initialState, status: 'loading' },
-        fetchRecipes.rejected(error, 'requestId')
+        fetchRecipes.rejected(error, 'requestId', undefined)
       );
       expect(result.status).toBe('failed');
       expect(result.error).toBe('Network error');
